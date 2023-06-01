@@ -26,7 +26,7 @@
     height: 100%;
     object-fit: fill;
     object-position: center;
-    display: block;
+    display: none;
 }
 
 .fa-solid {
@@ -43,4 +43,9 @@
     bottom: 50%;
     left: 102%;
     translate: 0 50%;
+}
+
+
+.carousel img.active {
+    display: block;
 }
