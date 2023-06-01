@@ -27,3 +27,14 @@ for (let i = 0; i < imgArray.length; i++) {
 // Insert img into DOM
 
 gallery.innerHTML = imageElements
+
+// Recover all img
+
+const images = document.querySelectorAll('.carousel img')
+
+// Prepare initial situation
+
+let currentIndex = 0;
+
+images[currentIndex].classList.add('active');
+
