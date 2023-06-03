@@ -38,3 +38,38 @@ let currentIndex = 0;
 
 images[currentIndex].classList.add('active');
 
+// Click Next Function
+
+nextButton.addEventListener('click', function() {
+
+    // Remove class current images
+    images[currentIndex].classList.remove('active');
+
+    // Add Infinite Carousel Condition
+
+    if (!(currentIndex === (images.length - 1))) {
+        currentIndex++;
+    } else {
+        currentIndex = 0
+    }
+
+    // Add class active to current images
+    images[currentIndex].classList.add('active');
+})
+
+// Click prev function
+
+prevButton.addEventListener('click', function() {
+    // Remove class current images
+    images[currentIndex].classList.remove('active');
+
+    // Add infinite Carousel Condition
+    if (!(currentIndex === 0)) {
+        currentIndex--;
+    } else {
+        currentIndex = (images.length - 1);
+    }
+
+    // Add class active to current images
+    images[currentIndex].classList.add('active');
+})
