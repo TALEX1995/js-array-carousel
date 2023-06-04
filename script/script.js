@@ -6,7 +6,8 @@ const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 
 const gallery = document.querySelector('.gallery');
-
+// Gallery Thumbnails DOM Element
+const imagesThumbnails = document.querySelectorAll('.gallery-thumbnails .col');
 
 // Prepare IMG Array
 
@@ -32,17 +33,24 @@ gallery.innerHTML = imageElements
 
 const images = document.querySelectorAll('.carousel img')
 
-// Prepare initial situation
+// Prepare initial situation carousel
 
 let currentIndex = 0;
 
 images[currentIndex].classList.add('active');
 
+// Prepare initial situation gallery-thumbnails
+
+imagesThumbnails[currentIndex].classList.remove('cover');
+
 // Click Next Function
 nextButton.addEventListener('click', function() {
 
-    // Remove class current images
+    // Remove class current images carousel
     images[currentIndex].classList.remove('active');
+    
+    // Gallery-thumbnails add class cover
+    imagesThumbnails[currentIndex].classList.add('cover');
 
     // Add Infinite Carousel Condition
     if (!(currentIndex === (images.length - 1))) {
@@ -51,15 +59,21 @@ nextButton.addEventListener('click', function() {
         currentIndex = 0
     }
 
-    // Add class active to current images
+    // Add class active to current images carousel
     images[currentIndex].classList.add('active');
+
+    // Gallery-thumbnails remove class cover
+    imagesThumbnails[currentIndex].classList.remove('cover');
 })
 
 
 // Click prev function
 prevButton.addEventListener('click', function() {
-    // Remove class current images
+    // Remove class current images carousel
     images[currentIndex].classList.remove('active');
+
+    // Gallery-thumbnails add class cover
+    imagesThumbnails[currentIndex].classList.add('cover');
 
     // Add infinite Carousel Condition
     if (!(currentIndex === 0)) {
@@ -68,6 +82,15 @@ prevButton.addEventListener('click', function() {
         currentIndex = (images.length - 1);
     }
 
-    // Add class active to current images
+    // Add class active to current images carousel
     images[currentIndex].classList.add('active');
+
+    // Gallery-thumbnails remove class cover
+    imagesThumbnails[currentIndex].classList.remove('cover');
 })
+
+
+
+
+
+
