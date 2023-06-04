@@ -39,14 +39,12 @@ let currentIndex = 0;
 images[currentIndex].classList.add('active');
 
 // Click Next Function
-
 nextButton.addEventListener('click', function() {
 
     // Remove class current images
     images[currentIndex].classList.remove('active');
 
     // Add Infinite Carousel Condition
-
     if (!(currentIndex === (images.length - 1))) {
         currentIndex++;
     } else {
@@ -57,8 +55,8 @@ nextButton.addEventListener('click', function() {
     images[currentIndex].classList.add('active');
 })
 
-// Click prev function
 
+// Click prev function
 prevButton.addEventListener('click', function() {
     // Remove class current images
     images[currentIndex].classList.remove('active');

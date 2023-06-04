@@ -12,8 +12,9 @@
 
 .carousel {
     width: 1200px;
-    height: 700px;
-    margin: 50px auto;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
     position: relative;
 }
 
@@ -22,11 +23,15 @@
 }
 
 .gallery img {
+    display: none;
+}
+
+.gallery img,
+.gallery-thumbnails img {
     width: 100%;
     height: 100%;
     object-fit: fill;
     object-position: center;
-    display: none;
 }
 
 .fa-solid {
@@ -49,3 +54,31 @@
 .carousel img.active {
     display: block;
 }
+
+
+/* Gallery Thumbnails */
+
+.gallery-thumbnails {
+    display: flex;
+    height: 200px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-thumbnails .col {
+    width: calc(100% / 5);
+    height: 200px;
+    position: relative;
+}
+
+.gallery-thumbnails .cover::after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
